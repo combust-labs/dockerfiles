@@ -3,9 +3,9 @@ FROM alpine:3.13
 LABEL APP "minio"
 LABEL APP_REPOSITORY "https://github.com/minio/minio/releases"
 
-ENV TIMEZONE Europe/Paris
-ENV MINIO_ACCESS_KEY docker-minio
-ENV MINIO_SECRET_KEY docker-minio
+ENV TIMEZONE UTC
+ENV MINIO_ACCESS_KEY fc-minio
+ENV MINIO_SECRET_KEY fc-minio
 ENV MINIO_BROWSER on
 
 # Installing packages
