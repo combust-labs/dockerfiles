@@ -16,13 +16,9 @@ ADD https://dl.minio.io/server/minio/release/linux-amd64/minio /usr/bin/minio
 RUN addgroup minio && \
     adduser -s /bin/false -G minio -S -D minio
 
-# Work path
-WORKDIR /scripts
-
-COPY scripts/start.sh start.sh
-
-VOLUME [ "/data" ]
+COPY start.sh /usr/bin/start.sh
 
 EXPOSE 9000
+VOLUME [ "/data" ]
 
-ENTRYPOINT  ["./start.sh"]
+ENTRYPOINT  ["/usr/bin/start.sh"]
