@@ -3,6 +3,33 @@
 [Firebuild](https://github.com/combust-labs/firebuild) is a tool to build Firecracker root file systems from Dockerfiles.  
 This repository contains a selection of example Dockerfiles.
 
+## etcd
+
+### Build
+
+```sh
+sudo $GOPATH/bin/firebuild rootfs \
+    --profile=standard \
+    --dockerfile=git+https://github.com/combust-labs/dockerfiles.git:/etcd/3.4.0/Dockerfile \
+    --machine-cni-network-name=machine-builds \
+    --machine-ssh-user=alpine \
+    --machine-vmlinux-id=vmlinux-v5.8 \
+    --resources-mem=512 \
+    --tag=combust-labs/etcd:3.4.0
+```
+
+### Run
+
+```sh
+sudo $GOPATH/bin/firebuild run \
+    --profile=standard \
+    --from=combust-labs/etcd:3.4.0 \
+    --machine-cni-network-name=alpine \
+    --machine-ssh-user=alpine \
+    --machine-vmlinux-id=vmlinux-v5.8 \
+    --identity-file=...
+```
+
 ## MinIO
 
 ### Build
