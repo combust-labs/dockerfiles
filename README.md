@@ -8,7 +8,7 @@ This repository contains a selection of example Dockerfiles.
 ```
 sudo $GOPATH/bin/firebuild rootfs \
     --profile=standard \
-    --dockerfile=git+https://github.com/combust-labs/dockerfiles.git:/minio/Dockerfile \
+    --dockerfile=git+https://github.com/combust-labs/dockerfiles.git:/minio/latest/Dockerfile \
     --machine-cni-network-name=machine-builds \
     --machine-ssh-user=alpine \
     --machine-vmlinux-id=vmlinux-v5.8 \
